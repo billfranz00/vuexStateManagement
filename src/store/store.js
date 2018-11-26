@@ -2,6 +2,10 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import counter from './modules/counter';
 
+import * as getters from './getters';
+import * as mutations from './mutations';
+import * as actions from './actions';
+
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
@@ -9,29 +13,29 @@ export const store = new Vuex.Store({
 		// counter: 0,
 		value: 0
 	},
-	getters: {
+	// getters: {
 		// doubleCounter: state => {
 		// 	return state.counter * 2;
 		// },
 		// stringCounter: state => {
 		// 	return state.counter + ' Clicks';
 		// },
-		value: state => {
-			return state.value;
-		}
-	},
-	mutations: {
+		// value: state => {
+		// 	return state.value;
+		// }
+	// },
+	// mutations: {
 		// increment: (state, payload) => {
 		// 	state.counter += payload;
 		// },
 		// decrement: (state, payload) => {
 		// 	state.counter -= payload;
 		// },
-		updateValue: (state, payload) => {
-			state.value = payload;
-		}
-	},
-	actions: {
+		// updateValue: (state, payload) => {
+		// 	state.value = payload;
+		// }
+	// },
+	// actions: {
 		// increment: ({ commit }, payload) => {
 		// 	commit('increment', payload);
 		// },
@@ -48,10 +52,13 @@ export const store = new Vuex.Store({
 		// 		commit('decrement', payload.by);
 		// 	}, payload.duration);
 		// },
-		updateValue: ({commit}, payload) => {
-			commit('updateValue', payload);
-		}
-	},
+		// updateValue: ({commit}, payload) => {
+		// 	commit('updateValue', payload);
+		// }
+	// },
+	getters,
+	mutations,
+	actions,
 	modules: {
 		counter
 	}
