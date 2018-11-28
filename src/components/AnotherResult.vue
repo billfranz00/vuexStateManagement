@@ -1,16 +1,17 @@
 <template>
     <div>
     	<!-- <p>Counter is: {{ counter }}</p> -->
-    	<!-- <p>Counter is: {{ doubleCounter }}</p> -->
-    	<p>Counter is: {{ double }}</p>
+    	<p>Counter is: {{ doubleCounter }}</p>
+    	<!-- <p>Counter is: {{ double }}</p> -->
     	<!-- <p>Number of Clicks: {{ clicks }}</p> -->
-    	<!-- <p>Number of Clicks: {{ stringCounter }}</p> -->
-    	<p>Number of Clicks: {{ string }}</p>
+    	<p>Number of Clicks: {{ stringCounter }}</p>
+    	<!-- <p>Number of Clicks: {{ string }}</p> -->
     </div>
 </template>
 
 <script>
 	import { mapGetters } from 'vuex';
+    import * as types from '../store/types';
 
     export default {
         // props: ['counter']
@@ -31,14 +32,20 @@
     	// 	double: 'doubleCounter',
     	// 	string: 'stringCounter'
     	// })
-    	computed: {
-    		...mapGetters({
-    			double: 'doubleCounter',
-    			string: 'stringCounter'
-    		}),
-    		ourOwn() {
+    	// computed: {
+    	// 	...mapGetters({
+    	// 		double: 'doubleCounter',
+    	// 		string: 'stringCounter'
+    	// 	}),
+    	// 	ourOwn() {
     			
-    		}
-    	}
+    	// 	}
+    	// }
+        computed: {
+            ...mapGetters({
+                doubleCounter: types.DOUBLE_COUNTER,
+                stringCounter: types.CLICK_COUNTER
+            })
+        }
     }
 </script>

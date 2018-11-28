@@ -2,9 +2,12 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import counter from './modules/counter';
 
-import * as getters from './getters';
-import * as mutations from './mutations';
-import * as actions from './actions';
+// import * as getters from './getters';
+// import * as mutations from './mutations';
+// import * as actions from './actions';
+import getters from './getters';
+import mutations from './mutations';
+import actions from './actions';
 
 Vue.use(Vuex);
 

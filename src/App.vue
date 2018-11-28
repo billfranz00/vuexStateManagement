@@ -25,6 +25,7 @@
     import AnotherCounter from './components/AnotherCounter.vue';
     import Result from './components/Result.vue';
     import AnotherResult from './components/AnotherResult.vue';
+    import * as types from './store/types';
 
     export default {
         // data() {
@@ -38,11 +39,14 @@
             // }
             value: {
                 get() {
-                    console.log(this.$store.getters.value);
-                    return this.$store.getters.value;
+                    // console.log(this.$store.getters.value);
+                    // return this.$store.getters.value;
+                    console.log(this.$store.getters[types.VALUE]);
+                    return this.$store.getters[types.VALUE];
                 },
                 set(value) {
-                    this.$store.dispatch('updateValue', value);
+                    // this.$store.dispatch('updateValue', value);
+                    this.$store.dispatch(types.UPDATE_VALUE, value);
                 }
             }
         },
